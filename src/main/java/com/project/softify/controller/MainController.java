@@ -20,7 +20,6 @@ public class MainController {
 
     @GetMapping("/")
     public String index(){
-        userService.save(new User(null,"gdfgdf@mail.ru","fsgdfgd","dasd","dasd",null));
         return "index";
     }
 }
