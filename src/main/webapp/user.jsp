@@ -16,28 +16,30 @@
     <title>Create an account</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${contextPath}/resources/js/ckeditor/ckeditor.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <div class="container">
 
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-
-        <h2>Welcome user ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-
-    </c:if>
+    <form>
+        <div class="adjoined-bottom">
+            <div class="grid-container">
+                <div class="grid-width-100">
+                    <div id="editor">
+                        <h1>Hello world!</h1>
+                        <p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" onClick="console.log(CKEDITOR.instances.editor1.getData())">Submit</button>
+    </form>
 
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${contextPath}/resources/js/sample.js"></script>
 </body>
 </html>
