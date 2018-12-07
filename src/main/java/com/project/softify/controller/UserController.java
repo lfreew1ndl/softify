@@ -68,10 +68,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    @Secured({"ROLE_USER"})
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String user(Model model) {
-        Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-        authorities.forEach(System.out::println);
         return "user";
     }
 }
