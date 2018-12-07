@@ -5,12 +5,18 @@ import com.project.softify.service.SecurityService;
 import com.project.softify.service.UserService;
 import com.project.softify.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Collection;
 
 @Controller
 public class UserController {
@@ -59,5 +65,13 @@ public class UserController {
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {
         return "welcome";
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    @Secured({"ROLE_USER"})
+    public String user(Model model) {
+        Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        authorities.forEach(System.out::println);
+        return "user";
     }
 }
