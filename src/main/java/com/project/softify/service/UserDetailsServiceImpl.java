@@ -27,9 +27,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
         if (user == null)
-            throw new UsernameNotFoundException("dfs");
+            throw new UsernameNotFoundException("");
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        System.out.println("aa");
+
         for (Role role : user.getRoles()){
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
