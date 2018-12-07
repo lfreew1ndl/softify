@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 @Controller
 public class UserController {
@@ -28,6 +29,7 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
+
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
@@ -45,7 +47,8 @@ public class UserController {
             return "registration";
         }
 
-        userService.save(userForm);
+
+        userService.register(userForm);
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
