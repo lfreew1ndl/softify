@@ -23,16 +23,30 @@
 <div class="container">
 
     <form>
-
         <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject">
+        <input type="text" name="subject" id="subject" required>
 
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject">
+        <label for="date">Date time: </label>
+        <input type="datetime-local" name="date" id="date" required>
 
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject">
-        
+        <label for="duration">Duration</label>
+        <input type="number" name="duration" id="duration" required>
+
+        <label for="space_amount">space_amount: </label>
+        <input type="number" name="space_amount" id="space_amount" required>
+
+        <label for="establishment">Establishment: </label>
+        <select id="establishment" required>
+            <c:forEach items="${establishment}" var="item">
+                <option value="${item.id}">${item.name}</option>
+                </c:forEach>
+        </select>
+
+        <label for="preview">Preview</label>
+        <textarea id="preview" name="preview">
+
+        </textarea>
+
         <div class="adjoined-bottom">
             <div class="grid-container">
                 <div class="grid-width-100">
@@ -43,7 +57,11 @@
                 </div>
             </div>
         </div>
-        <button type="button" onClick="console.log(CKEDITOR.instances.editor1.getData())">Submit</button>
+
+
+
+
+        <button type="button" onClick="addEvent()">Submit</button>
     </form>
 
 </div>
@@ -51,5 +69,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/sample.js"></script>
+<script src="${contextPath}/resources/js/event.js"></script>
 </body>
 </html>
