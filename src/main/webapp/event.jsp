@@ -55,7 +55,7 @@
              <h4>${event.space_amount} Left</h4>
            </div>
            <div class="registration">
-             <a href="#">registration</a>
+             <a href="/event?id=${event.id}">registration</a>
            </div>
         </div>
   </div>
