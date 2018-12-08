@@ -4,11 +4,14 @@ import com.project.softify.model.Event;
 import com.project.softify.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class EventController {
 
     @Autowired
@@ -19,4 +22,11 @@ public class EventController {
         eventService.save(event);
     }
 
+
+    @RequestMapping("/eventDesc")
+    public String eventDescription(Model model, @RequestParam long id){
+        ModelAndView modelAndView = new ModelAndView();
+        model.addAttribute("event", eventService.findById(id).orElse(null));
+        return "event";
+    }
 }

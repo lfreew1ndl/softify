@@ -28,7 +28,7 @@
      <div class="event">
         <div class="head" name="head">
            <div class="title" name="">
-              <h1>name of event</h1>
+              <h1>${event}</h1>
               <h4>00:00-00:00, address</h4>
            </div>
            <div class="logo" name="logo">
