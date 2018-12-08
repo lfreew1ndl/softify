@@ -30,12 +30,15 @@
    <div id="header" class="box">
      <h1 id="logo">simple<span>magazine</span> 01</h1>
      <ul id="nav">
-       <li class="current"><a href="index.html">Homepage</a></li>
-       <li><a href="subpage.html">Categories</a></li>
-       <li><a href="#">Discussion</a></li>
-       <li><a href="#">Authors</a></li>
-       <li><a href="#">Blogs</a></li>
-       <li><a href="#">Contact</a></li>
+         <li><a href="/index">Homepage</a></li>
+         <li><a href="/event">Add event</a></li>
+         <c:if test="${pageContext.request.userPrincipal.name == null}">
+             <li><a href="/registration">Registration</a></li>
+             <li><a href="/login">Login</a></li>
+         </c:if>
+         <c:if test="${pageContext.request.userPrincipal.name != null}">
+             <li><a href="/logout">logout</a></li>
+         </c:if>
      </ul>
    </div>
 <div class="container">

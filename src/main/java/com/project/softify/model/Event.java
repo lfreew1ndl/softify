@@ -3,6 +3,7 @@ package com.project.softify.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -23,9 +24,10 @@ public class Event {
     private LocalDateTime date;
 
     private int duration;
-
+    @Type(type="text")
     private String preview;
 
+    @Type(type="text")
     private String description;
 
     @ManyToOne
