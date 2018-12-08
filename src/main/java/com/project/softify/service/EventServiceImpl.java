@@ -3,10 +3,12 @@ package com.project.softify.service;
 import com.project.softify.model.Event;
 import com.project.softify.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class EventServiceImpl implements EventService {
 
     @Autowired
