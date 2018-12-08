@@ -23,6 +23,8 @@ public class Event {
 
     private int duration;
 
+    private String preview;
+
     private String description;
 
     @ManyToOne
