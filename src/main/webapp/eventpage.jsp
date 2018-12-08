@@ -15,13 +15,30 @@
 
     <title>Create an account</title>
 
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/skin.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/eventsList.css" />
+    <script type="text/javascript" src="javascript/cufon-yui.js"></script>
+    <script type="text/javascript" src="javascript/font.font.js"></script>
+
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <script src="${contextPath}/resources/js/ckeditor/ckeditor.js"></script>
 
 </head>
 <body>
+<div class="main">
+   <div id="header" class="box">
+     <h1 id="logo">simple<span>magazine</span> 01</h1>
+     <ul id="nav">
+       <li class="current"><a href="index.html">Homepage</a></li>
+       <li><a href="subpage.html">Categories</a></li>
+       <li><a href="#">Discussion</a></li>
+       <li><a href="#">Authors</a></li>
+       <li><a href="#">Blogs</a></li>
+       <li><a href="#">Contact</a></li>
+     </ul>
+   </div>
 <div class="container">
-
     <form>
         <label for="subject">Subject</label>
         <input type="text" name="subject" id="subject" required>
@@ -70,5 +87,13 @@
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/sample.js"></script>
 <script src="${contextPath}/resources/js/event.js"></script>
+</div>
+<div id="footer">
+  <div class="main box">
+    <p class="f-right t-right">Design by <a href="http://www.templatesdock.com/">TemplatesDock</a></p>
+    <p class="f-left">Copyright &copy;&nbsp;2010 <a href="#">SimpleMagazine</a></p>
+  </div>
+</div>
+<script type="text/javascript">Cufon.now();</script>
 </body>
 </html>
