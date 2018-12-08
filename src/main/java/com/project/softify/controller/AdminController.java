@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminController {
@@ -24,12 +23,8 @@ public class AdminController {
     }
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
-    @RequestMapping(value = "/addEstablishment", method = RequestMethod.GET)
-    public String addEstablishment(@RequestParam("name") String name,
-                                   @RequestParam("bio") String bio){
-        Establishment establishment = new Establishment();
-        establishment.setName(name);
-        establishment.setBio(bio);
+    @RequestMapping(value = "/adminPage", method = RequestMethod.POST)
+    public String addEstablishment(@RequestBody Establishment establishment){
         establishmentService.save(establishment);
         return "admin-page";
     }

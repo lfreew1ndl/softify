@@ -20,40 +20,43 @@
      <div id="header" class="box">
        <h1 id="logo">simple<span>magazine</span> 01</h1>
        <ul id="nav">
-         <li class="current"><a href="index.html">Homepage</a></li>
-         <li><a href="subpage.html">Companies</a></li>
+         <li><a href="/index">Homepage</a></li>
+         <li><a href="/event">Add event</a></li>
+         <li><a href="/registration">Registration</a></li>
+         <li><a href="/login">Login</a></li>
        </ul>
      </div>
 
      <div class="event">
         <div class="head" name="head">
            <div class="title" name="">
-              <h1>${event}</h1>
-              <h4>00:00-00:00, address</h4>
+              <h1>${event.subject}</h1>
+              <h4>${event.date}</h4>
            </div>
            <div class="logo" name="logo">
               <img class="logo" src="resources/images/logo.png" alt="logo">
            </div>
         </div>
         <div class="info" name="info">
-           <p>Man request adapted spirits set pressed. Up to denoting subjects sensible feelings it indulged directly. We dwelling elegance do shutters appetite yourself diverted. Our next drew much you with rank. Tore many held age hold rose than our. She literature sentiments any contrasted. Set aware joy sense young now tears china shy.
-             On am we offices expense thought. Its hence ten smile age means. Seven chief sight far point any. Of so high into easy. Dashwoods eagerness oh extensive as discourse sportsman frankness. Husbands see disposed surprise likewise humoured yet pleasure. Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence son shy. </p>
+            <p>
+            ${event.description}</p>
+
         </div>
         <div class="reg" name="reg">
            <div class="amount">
-             <h4>20 left</h4>
+             <h4>${event.space_amount} Left</h4>
            </div>
            <div class="registration">
              <a href="#">registration</a>
            </div>
         </div>
   </div>
-  <div id="footer">
+  <footer>
      <div class="main box">
         <p class="f-right t-right">Design by <a href="http://www.templatesdock.com/">TemplatesDock</a></p>
         <p class="f-left">Copyright &copy;&nbsp;2010 <a href="#">SimpleMagazine</a></p>
      </div>
-  </div>
+  </footer>
   <script type="text/javascript">Cufon.now();</script>
    <!-- END PAGE SOURCE -->
 </body>
