@@ -41,26 +41,26 @@
 <div class="container">
     <form>
         <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject" required>
+        <input type="text" name="subject" id="subject" required><br>
 
         <label for="date">Date time: </label>
-        <input type="datetime-local" name="date" id="date" required>
+        <input type="datetime-local" name="date" id="date" required><br>
 
         <label for="duration">Duration</label>
-        <input type="number" name="duration" id="duration" required>
+        <input type="number" name="duration" id="duration" required><br>
 
         <label for="space_amount">space_amount: </label>
-        <input type="number" name="space_amount" id="space_amount" required>
+        <input type="number" name="space_amount" id="space_amount" required><br>
 
         <label for="establishment">Establishment: </label>
         <select id="establishment" required>
             <c:forEach items="${establishment}" var="item">
                 <option value="${item.id}">${item.name}</option>
                 </c:forEach>
-        </select>
+        </select><br>
 
         <label for="preview">Preview</label>
-        <textarea id="preview" name="preview">
+        <textarea id="preview" name="preview"><br>
 
         </textarea>
 
