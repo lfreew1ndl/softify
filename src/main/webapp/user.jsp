@@ -23,11 +23,21 @@
 <div class="container">
 
     <form>
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject">
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject">
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject">
+        
         <div class="adjoined-bottom">
             <div class="grid-container">
                 <div class="grid-width-100">
                     <div id="editor">
-                        <h1>Hello world!</h1>
+                        <h1>Hello wfdsfsdorld!</h1>
                         <p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
                     </div>
                 </div>
