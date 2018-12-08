@@ -3,9 +3,11 @@ package com.project.softify.service;
 import com.project.softify.model.EventApplication;
 import com.project.softify.repository.EventApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class EventApplicationServiceImpl implements EventApplicationService {
 
     @Autowired
