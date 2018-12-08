@@ -12,13 +12,15 @@
     <title>ADMIN</title>
 </head>
 <body>
-<h1>ADMIN</h1>
-<form action="/adminPage" method="post">
-    <label>Name</label>
-    <input name="name" type="text"/>
-    <label>bio</label>
-    <textarea name="bio"></textarea>
-    <input type="submit">
-</form>
+ <div id="adminPage"> 
+        <h1>ADMIN</h1>
+        <form action="/adminPage" method="post">
+            <label>Name</label>
+            <input name="name" type="text"/> <br /><br />
+            <label>Bio</label>
+            <textarea name="bio"></textarea> <br /><br />
+            <input type="submit">
+        </form>
+      </div>    
 </body>
 </html>
