@@ -20,7 +20,12 @@ public class Event {
     private String subject;
 
     private LocalDateTime date;
+
     private int duration;
+
+    private String preview;
+
+    private String description;
 
     @ManyToOne
     private Establishment establishment;
