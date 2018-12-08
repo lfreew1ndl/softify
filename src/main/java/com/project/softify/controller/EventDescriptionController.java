@@ -40,6 +40,6 @@ public class EventDescriptionController {
             service.save(eventApplication);
             eventService.save(event);
         }
-        return "event";
+        return "redirect:/index";
     }
 }
