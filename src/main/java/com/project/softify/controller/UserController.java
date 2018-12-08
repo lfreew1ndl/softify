@@ -67,10 +67,7 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "welcome";
-    }
+
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     @PreAuthorize("hasRole('ROLE_ADMIN')")

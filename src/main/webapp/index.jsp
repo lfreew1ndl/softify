@@ -9,7 +9,9 @@
 <link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
 <link rel="stylesheet" media="screen,projection" type="text/css" href="css/skin.css" />
 <link rel="stylesheet" media="screen,projection" type="text/css" href="css/eventsList.css" />
-<script type="text/javascript" src="javascript/cufon-yui.js"></script>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/companiesList.css" />
+
+    <script type="text/javascript" src="javascript/cufon-yui.js"></script>
 <script type="text/javascript" src="javascript/font.font.js"></script>
 
 <script type="text/javascript">
@@ -24,10 +26,16 @@ Cufon.replace('h1, h2, h3, h4, h5, h6', {
   <div id="header" class="box">
     <h1 id="logo">simple<span>magazine</span> 01</h1>
     <ul id="nav">
-        <li class="current"><a href="/index">Homepage</a></li>
-        <li><a href="subpage.html">Add event</a></li>
-        <li><a href="#">Registration</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/index">Homepage</a></li>
+        <li><a href="/event">Add event</a></li>
+        <c:if test="${pageContext.request.userPrincipal.name == null}">
+        <li><a href="/registration">Registration</a></li>
+        <li><a href="/login">Login</a></li>
+        </c:if>
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <li><a href="/logout">logout</a></li>
+        </c:if>
+
     </ul>
   </div>
 
@@ -48,47 +56,23 @@ Cufon.replace('h1, h2, h3, h4, h5, h6', {
             <div class="info">
               <h2 class="title">${item.subject}</h2>
               <p class="desc">${item.preview}</p>
-              <a class="detail" href="#">Detail</a>
+              <a class="detail" href="/eventDesc?id=${item.id}">Detail</a>
             </div>
         </li>
           </c:forEach>
         <!--end eventsItem -->
       </ul>
-       
-      <!--<div class="pagination box">-->
-        <!--<p class="f-right"> <a href="#" class="current">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">Next &raquo;</a> </p>-->
-        <!--<p class="f-left">Page 1 of 13</p>-->
-      <!--</div>-->
+
     </div>
-    <!-- end EventsItem block -->
 
     <div id="aside">
-      <form action="#" method="get" id="search">
-        <p>
-          <input type="text" size="20" class="input-text" value="Search our website" onfocus="if(this.value=='Search our website') this.value=''" />
-          <input type="submit" value="Search" class="input-submit" />
-        </p>
-      </form>
-      <h3>Sidebar Menu</h3>
-      <ul class="menu">
-        <li><a href="#">Discussion</a></li>
-        <li><a href="#">Authors</a></li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <h3>About</h3>
-      <p class="box"> <img src="tmp/about-01.jpg" alt="" class="f-left" /> My name is Jessie Doe. I´m 26 years old and I´m living in the New York City.<br />
-        <a href="#">More about me</a> </p>
-      <h3 class="nomb">Sponsors</h3>
-      <ul class="sponsors">
-        <li><a href="#">Lorem ipsum dolor</a><br />
-          Donec libero. Suspendisse bibendum</li>
-        <li><a href="#">Dui pede condimentum</a><br />
-          Phasellus suscipit, leo a pharetra</li>
-        <li><a href="#">Condimentum lorem</a><br />
-          Tellus eleifend magna eget</li>
-        <li><a href="#">Donec mattis</a><br />
-          purus nec placerat bibendum</li>
+      <h3 class="text-center">Companies</h3>
+      <ul class="menu companiesList">
+          <c:forEach items="${comp}" var="item1">
+
+          <li><a href="#">${item1.name}</a></li>
+          </c:forEach>
+
       </ul>
     </div>
   </div>
